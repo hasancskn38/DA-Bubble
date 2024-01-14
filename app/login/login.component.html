@@ -1,0 +1,83 @@
+
+<div class="content" >
+
+    <div class="header">
+        <div class="image-container">
+            <img class="logo-image" src="assets/icons/logo_with_text.png">
+        </div>
+    
+        <div class="register-container">
+            <span class="question">Neu bei DABubble?</span>
+            <span class="register-link" routerLink="/register">Konto erstellen</span>
+        </div>
+    </div>
+
+    <div (keydown)="onKeydown($event)" class="login-container">
+        <div class="login-container-header">
+            <span class="login-headline">Anmeldung</span>
+            <span class="recommendation">Wir empfehlen dir, die E-Mail-Adresse zu nutzen, die du bei der Arbeit
+                verwendest.</span>
+        </div>
+
+
+        <div class="inputfield-container">
+            <img src="assets/icons/email-icon.png" alt="image of mail icon" class="inputfield-image">
+            <input type="text" class="inputfield" placeholder="beispielname@email.com" [(ngModel)]="email" name="email">
+            <div class="error-message" *ngIf="errorMessage">
+                {{ errorMessage }}
+            </div>
+        </div>
+
+        <div class="inputfield-container">
+            <img src="assets/icons/password-icon.png" alt="" class="inputfield-image">
+            <input type="password" class="inputfield" placeholder="Passwort" [(ngModel)]="password" name="password">
+        </div>
+
+        <div class="forgot-password-container">
+            <span class="forgot-password"  routerLink="/forgot-password">Passwort vergessen?</span>
+        </div>
+
+
+        <div class="or-container">
+            <div>
+                <img src="assets/icons/line.png" alt="image of line icon">
+            </div>
+            
+            <span class="other">ODER</span>
+            <div>
+                <img src="assets/icons/line.png" alt="image of line icon">
+            </div>
+        </div>
+
+        <div class="google-container" (click)="loginWithGoogle()">
+            <img src="assets/icons/google-icon.png" alt="image of google icon">
+            <span class="google-login">Anmelden mit Google</span>
+        </div>
+
+        <div class="button-container">
+            <div class="login-button-container">
+                <button class="login-button" (click)="login()">Anmelden</button>
+            </div>
+
+            <div class="guest-login-button-container">
+                <button class="guest-login-button" (click)="loginAsGuest()">Gäste-Login</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-register-container">
+        <span class="question">Neu bei DABubble?</span>
+        <span class="register-link" routerLink="/register">Konto erstellen</span>
+    </div>
+
+    <div class="impressum-datenschutz">
+        <div class="impressum-container">
+            <a class="impressum" routerLink="/imprint">Impressum</a>
+        </div>
+
+        <div class="datenschutz-container">
+            <a class="datenschutz" routerLink="/dataprotection">Datenschutz</a>
+        </div>
+    </div>
+
+</div>

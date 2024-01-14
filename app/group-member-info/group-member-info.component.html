@@ -1,0 +1,32 @@
+<div class="popup-container br-30">
+
+    <div class="header-container ">
+        <h2>Mitglieder</h2> <i class="material-icons cursor close-button" (click)="dialogRef.close()">close</i>
+    </div>
+
+    <div class="image-container mt-20 ">
+    <img src="{{ member.imgNr }}" alt="">
+    </div>
+
+    <div class="name-container mt-20 ">
+
+        <h3 class="bold">{{ member.name }}</h3>
+        <br>
+        <div class="active-container">
+        <div class="circle"></div>
+        <h3>Aktiv</h3>    
+        </div>
+
+        <div class="email-container mt-20" >
+            <i class="material-icons">mail_outline</i>
+            <h3> {{member.email}}</h3>
+        </div>
+
+        <div class="message-container mt-20 cursor" (click)="sendMessage()">
+            <i class="material-icons">message</i>
+            <h3>Nachricht</h3>
+        </div>
+
+    </div>
+
+</div>

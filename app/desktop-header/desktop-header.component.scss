@@ -1,0 +1,151 @@
+.header-responsive {
+    display: none;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    margin: 20px;
+
+    input {
+        border-radius: 42px;
+        border: none;
+        width: 700px;
+        padding: 18px 45px;
+        font-size: 24px;
+        background-image: url('/assets/icons/search_icon.png');
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-position-x: 95%;
+        border: 1px solid transparent;
+        transition: 0.2s;
+        box-sizing: border-box;
+        outline: none;
+
+        &:hover {
+            cursor: pointer;
+            border: 1px solid grey;
+        }
+
+        &:focus {
+            outline: 1px solid grey;
+        }
+
+        @media(max-width:1350px) {
+            width: 500px;
+        }
+
+        @media(max-width:1130px) {
+            width: 400px;
+        }
+    }
+}
+
+.user-info-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+
+    h2 {
+        margin: 0;
+        font-weight: 700;
+
+        @media(max-width:1130px) {
+            display: none;
+        }
+    }
+
+    img {
+        height: 72px;
+        width: 72px;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+
+    .point {
+        position: absolute;
+        font-size: 30px;
+        right: 55px;
+        bottom: 0;
+        color: green;
+
+        @media(max-width:1130px) {
+            right: 0;
+        }
+    }
+
+    mat-icon {
+        @media(max-width:1130px) {
+            display: none;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        color: #535AF1;
+    }
+}
+
+@media (max-width:1200px) {
+
+    header {
+        padding: 0 20px;
+        margin: 0;
+        height: 110px;
+
+        input {
+            display: none;
+        }
+
+    }
+
+    .header-responsive {
+        gap: 25px;
+        display: flex;
+        align-items: center;
+
+    }
+
+
+    .dabubble-logo {
+        display: none;
+    }
+
+    .point {
+        bottom: 15px !important;
+    }
+
+}
+
+@media (max-width:550px) {
+
+    .header-responsive {
+        h1 {
+            font-size: 20px;
+        }
+
+        img {
+            height: 50px;
+            width: 50px;
+        }
+
+
+    }
+
+    .user-info-container {
+        img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .point {
+            bottom: 25px !important;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+.chat-section {
+    display: flex;
+    // gap: 20px;
+}
+
+app-main-chat,app-direct-chat{
+    width: 100vw;
+}
+
+app-main-thread {
+    width: 35vw;
+    min-width: 400px;
+    max-width: 450px;
+    background-color: #fff;
+    margin: 0 20px 0 0;
+    border-radius: 30px;
+}
+
+@media (max-width:1200px) {
+
+    app-main-chat {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        // z-index: 45;
+    }
+
+    app-main-thread {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border-radius: 0;
+        min-width: unset;
+        width: 100vw;
+        // z-index: 2;
+    }
+
+    app-sidebar {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100dvw !important;
+        // z-index: 4;
+    }
+
+}

@@ -1,0 +1,51 @@
+<div class="popup-container pd-30">
+
+    <div class="header-container">
+        <h2>Leute hinzufügen</h2> <i class="material-icons cursor close-button" (click)="closeDialog()" >close</i>
+    </div>
+    
+    <h3 class="group-name">
+      # {{sharedService.currentActiveChannel.value}}
+    </h3>
+
+    <div class="added-users">
+      <div class="single-added-user" *ngFor="let addedUser of actAddMembers; let i = index" (click)="removeUser(i)">
+        <span > {{ addedUser.name}}</span>
+      </div>
+      
+    </div>
+
+    <div class="add-member-button-container">
+        <button *ngIf="!addSuccess" class="cursor" (click)="saveNewUsers()" [disabled]="actAddMembers.length == 0" [class.disabled-btn]="actAddMembers.length == 0">Hinzufügen</button>
+        <mat-icon *ngIf="addSuccess" class="add-done">done</mat-icon>
+    </div>
+
+    <!-- direct message drop down -->
+    <div class="dropdown-container">
+        <div class="dropdown-header">
+          <div class="dropdown-hover" (click)="openDropdownMessages()">
+            <div class="arrow">
+              <mat-icon *ngIf="!messageDropdown">arrow_right</mat-icon>
+              <mat-icon *ngIf="messageDropdown">arrow_drop_down</mat-icon>
+            </div>
+            <div class="dropdown-name">
+              <mat-icon>account_circle_outline</mat-icon>
+              <span><b>Alle Nutzer</b></span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <!-- user container for direct messages -->
+          <div class="list-container direct-message scroll-bar" *ngIf="messageDropdown" [@dropDownMenu]>
+            <div *ngFor="let user of actMembers; let i = index " (click)="addMember(i)" id="userID-{{i}}" class="single-entry">
+              <img src= '{{user.avatar}}'>
+              <span class="point">&#9679;</span>
+              <p>{{user.name}}</p>
+            </div>
+          </div>
+          <!-- end channel container for single channels -->
+        </div>
+      </div>
+      <!-- end direct message drop down -->
+    
+</div>

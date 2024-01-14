@@ -1,0 +1,23 @@
+<div class="dialog-create-channel">
+    <div class="dialog-header">
+        <h2>Channel erstellen</h2>
+        <button class="icon-btn-hover" mat-icon-button (click)="dialogRef.close()"><mat-icon>close</mat-icon></button>
+    </div>
+    <div>
+        <p>Channels dienen deinem Team zur Kommunikation.Am besten sollten sie themenbezogen sein #marketing zum
+            Beispiel.</p>
+    </div>
+    <div>
+        <h3>Channel-Name</h3>
+        <input placeholder="# z.B. Kooperationsprojekte" [(ngModel)]="channelName">
+        <span class="error-channel-exist" *ngIf="errChannelExist">Channel exisitert bereits</span>
+        <span class="error-channel-exist" *ngIf="channelName.length < 3">Channel muss mindestens drei Zeichen haben</span>
+    </div>
+    <div>
+        <h3>Beschreibung <span>(optional)</span></h3>
+        <input placeholder="Dein Text hier" [(ngModel)]="channelDescription">
+    </div>
+    <div class="create-btn">
+        <button mat-button  [disabled]="channelName.length < 3" [class.btn-disabled]="channelName.length < 3 " (click)="saveNewChannel()">Erstellen</button>
+    </div>
+</div>

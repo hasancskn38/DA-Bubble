@@ -1,0 +1,78 @@
+
+
+<div class="content">
+
+    <div class="header">
+    <div class="image-container">
+        <img class="logo-image" src="assets/icons/logo_with_text.png">
+    </div>
+</div>
+
+    <div class="avatar-container">
+
+        <div class="choose-avatar-headline-container">
+            <div class="back-icon-container" routerLink="/register">
+                <img class="back-icon" src="assets/icons/arrow_back.png" alt="image of arrow-left icon">
+            </div>
+
+            <span class="choose-avatar-headline">Wähle deinen Avatar</span>
+            
+        </div>
+
+        <div class="avatar">
+            <div id="avatar-image-container">
+                <img [src]="selectedCharacter" alt="Selected character">
+            </div>
+
+            <span class="registered-user-name">
+                {{ userData.name }}
+            </span>
+        </div>
+
+        <div class="choose-own-character">
+            <div class="choose-avatar-title">
+                <span class="choose-from-list-span">
+                    Aus der Liste wählen
+                </span>
+            </div>
+    
+            <div class="character-images-container">
+                <div class="image-container" *ngFor="let character of characters; let i = index">
+                    <img class="image" [src]="character" (click)="selectCharacter(i)" alt="Character">
+                </div>
+            </div>
+        </div>
+    
+
+
+        <div class="choose-own-image-container">
+            <span class="choose-own-image-span">
+                Eigenes Bild verwenden
+            </span>
+            <div>
+                <button class="choose-own-image-button" (click)="openFileInput()">Bild hochladen</button>
+                <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)">
+            </div>
+        </div>
+
+
+
+
+
+        <div class="button-container">
+            <button class="next-button" (click)="register()">Weiter</button>
+        </div>
+    </div>
+
+
+
+    <div class="impressum-datenschutz">
+        <div class="impressum-container">
+            <a class="impressum" href="">Impressum</a>
+        </div>
+
+        <div class="datenschutz-container">
+            <a class="datenschutz" href="">Datenschutz</a>
+        </div>
+    </div>
+</div>

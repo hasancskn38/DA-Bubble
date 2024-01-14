@@ -1,0 +1,15 @@
+<div class="popup-container">
+    <div class="header-container">
+        <h2>Mitglieder</h2> <i class="material-icons cursor close-button" (click)="dialogRef.close()">close</i>
+    </div>
+
+    <div (click)="openGroupMemberInfo(member)" *ngFor="let member of currentChannel.info.members; let i = index" class="group-members cursor" id="members">
+        <img src="{{member.imgNr}}" alt="" referrerpolicy="no-referrer"> <p>{{ member.name }} <span *ngIf="member.name == userDataService.currentUser['name']">(Du)</span></p>
+    </div>
+    
+    <div class="add-member cursor">
+        <i class="material-icons add-new-member cursor">person_add_alt</i>
+        <p (click)="openAddMemberPopUp()">Mitglieder hinzufügen</p>
+    </div>
+
+</div>

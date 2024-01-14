@@ -1,0 +1,64 @@
+$main-purple: #eceefe;
+$purple: #535af1;
+
+p {
+    margin: 0;
+}
+
+.popup-container {
+
+    .group-member-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+
+    }
+
+    .group-members {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+
+        &:hover {
+            background-color: $main-purple;
+            border-radius: 30px;
+        }
+
+        p {
+            justify-content: start;
+        }
+
+        img {
+            height:40px;
+            width: 40px;
+            border-radius: 50%;
+            margin: 0 10px 0 0;
+            object-fit: cover;
+        }
+    }
+
+    .add-member {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+
+        &:hover{
+            background-color:$main-purple;
+            border-radius: 30px;
+
+            i {
+                color: $purple;
+            }
+        }
+
+        i {
+            margin: 0 10px 0 0;
+            padding: 5px ;
+            background-color: $main-purple;
+            border-radius: 50%;
+        }
+    }
+
+}

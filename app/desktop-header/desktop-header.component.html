@@ -1,0 +1,19 @@
+<header *ngIf="sharedService.headerContentReady">
+
+    <div class="header-responsive">
+        <mat-icon (click)="closeSidebar()" class="material-icons cursor">menu</mat-icon>
+        <img src="/assets/icons/workspace_logo.png" alt="">
+        <h1 class="bold">Code learning</h1>
+    </div>
+
+    <img class="dabubble-logo" src="/assets/icons/logo_with_text.png">
+    <input [(ngModel)]="filterValue" (input)="filterArray()" placeholder="Code learning durchsuchen">
+    <div class="user-info-container" (click)="openDialog()">
+        <h2>{{userDataService.currentUser['name']}}</h2>
+        <!-- <img *ngIf="!userDataService.guestUser" src="{{auth.currentUser.photoURL}}"> -->
+        <img *ngIf="!userDataService.guestUser" src="{{userDataService.currentUser['imgNr']}}" referrerpolicy="no-referrer">
+        <img *ngIf="userDataService.guestUser" src="/assets/characters/default_character.png">
+        <span class="point">&#9679;</span>
+        <mat-icon>expand_more</mat-icon>
+    </div>
+</header>

@@ -1,0 +1,196 @@
+//---------------------------------- HEADER ----------------------- //
+.header {
+    margin: 32px;
+    display: flex;
+    width: 100%;
+}
+// -------------------- CONTENT ------------------------ //
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+// --------------------- REGISTER CONTAINER ------------------- // 
+.register-container {
+    max-width: 450px;
+    width: 100%;
+    background-color: white;
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+//------------------ BACK ARROW ICON ------------------- //
+.back-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    .back-icon{
+        padding: 4px;
+        transition: 0.2s;
+        object-fit: cover;
+
+        &:hover {
+            background-color: #ECEEFE;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    }
+}
+
+//--------------- REGISTER HEADER CONTAINER ---------------- // 
+.register-headline-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    .register-headline {
+        color: #444DF2;
+        font-size: 40px;
+        font-weight: 700;
+        width: 100%;
+        text-align: center;
+    }
+}
+.register-notice-container {
+    text-align: center;
+    .register-notice{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+}
+// ------------------------ ACCEPT DATA RULES IN CHECKBOX ------------------ //
+.accept-data-protection-container {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+.checkbox-container {
+    input {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+.checkbox-sentence {
+    font-size: 16px;
+    color: #42526E;
+    margin-left: 8px;
+}
+.data-protection-word {
+    font-size: 16px;
+    font-weight: 400;
+    color: #797EF3;
+}
+//------------------ WEITER BUTTON --------------------- //
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.next-button {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: white;
+    background-color: #444DF2;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    transition: 0.2s;
+    &:hover {
+        background-color: #797EF3;
+        cursor: pointer;
+    }
+}
+.next-button:disabled {
+    background-color: rgb(104, 104, 104);
+    cursor: not-allowed;
+}
+// ----------------- IMPRESSUM UND DATENSCHUTZ --------------- // 
+.impressum-datenschutz {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    .impressum {
+        font-size: 18px;
+        font-weight: 400px;
+        text-decoration: none;
+        color: #797EF3;
+        &:hover {
+            color: #444DF2;
+        }
+    }
+    .datenschutz {
+        font-size: 18px;
+        font-weight: 400px;
+        text-decoration: none;
+        color: #797EF3;
+        &:hover {
+            color: #444DF2;
+        }
+    }
+}
+
+// --------------- ERROR MESSAGE ---------------- // 
+.error-message {
+    color: red;
+    font-size: 14px !important;
+    text-align: center;
+}
+
+//-------------RESPONSIVE-------------//
+@media (max-width: 600px) {
+    .logo-image{
+        height: 55px;
+    }
+    .header {
+        justify-content: center;
+    }
+    .register-container{
+        gap: 8px !important;
+    }
+    .register-headline {
+        font-size: 24px !important;
+    }
+    .register-notice {
+        font-size: 16px !important;
+        line-height: unset !important;
+    }
+    .inputfield{
+        font-size: 16px !important;
+    }
+    .inputfield-image{
+        top: 12px !important;
+    }
+ .next-button{
+        font-size: 16px !important;
+    }
+    .impressum{
+        font-size: 16px !important;
+    }
+    .datenschutz{
+        font-size: 16px !important;
+    }
+}

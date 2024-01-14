@@ -1,0 +1,38 @@
+.log-out-dialog {
+    padding: 10px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    min-width: 200px;
+
+    .menu-item:hover,
+    .logout-container:hover {
+        cursor: pointer;
+        color: #535AF1;
+        background-color: #ECEEFE;
+        border-radius: 20px;
+    }
+
+    .menu-item,
+    .logout-container {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+
+        span {
+            outline: none;
+            padding: 5px;
+            margin: 0;
+        }
+    }
+
+    .logout-container {
+        padding: 5px 10px;
+        gap: 10px;
+        justify-content: space-between;
+    }
+}

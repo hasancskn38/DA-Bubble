@@ -1,0 +1,65 @@
+<div class="popup-container ">
+
+    <div class="header-container">
+        <h2 class="group-name"># {{currentChannel.info.name}}</h2> <i class="material-icons cursor close-button"
+            (click)="dialogRef.close()">close</i>
+    </div>
+
+    <div class="group-info-name-container" [ngClass]="{'is-editing': isEditing}">
+        <div class="header-container">
+            <h3 class="bold">Channel - Name</h3>
+            <button class="cursor purple" *ngIf="!isEditing && !changeNameSuccess" (click)="changeChannelName()">Bearbeiten</button>
+            <button class="cursor purple" [class.opacity-0-3]="(channelName == '')" *ngIf="isEditing && !changeNameSuccess" (click)="saveChannelName()">Speichern</button>
+            <mat-icon *ngIf="changeNameSuccess" class="change-info-done">done</mat-icon>
+        </div>
+        <div class="group-info-name">
+            <ng-container *ngIf="isEditing; else displayChannelName">
+                <input  [(ngModel)]="channelName" />
+            </ng-container>
+            <ng-template #displayChannelName>
+                <p># {{currentChannel.info.name}}</p>
+            </ng-template>
+        </div>
+    </div>
+
+    <div class="group-info-description-container" [ngClass]="{'is-editing': hideEditDescription}">
+        <div class="header-container">
+            <h3 class="bold">Beschreibung</h3>
+            <button class="cursor purple" *ngIf="!hideEditDescription && !changeDescriptionSuccess" (click)="changeChannelDescription()">Bearbeiten</button>
+            <button class="cursor purple" [class.opacity-0-3]="(channelDescription == '')" *ngIf="hideEditDescription && !changeDescriptionSuccess" (click)="saveChannelDescription()">Speichern</button>
+            <mat-icon *ngIf="changeDescriptionSuccess" class="change-info-done">done</mat-icon>
+        </div>
+        <div class="group-info-name">
+            <ng-container *ngIf="hideEditDescription; else displayDescription">
+                <input [(ngModel)]="channelDescription"/>
+            </ng-container>
+            <ng-template #displayDescription>
+                <p>{{currentChannel.info.description}}</p>
+            </ng-template>
+        </div>
+        <hr *ngIf="!hideEditDescription">
+        <br *ngIf="hideEditDescription">
+        <div class="group-creator-container">
+            <h3 class="bold">Erstellt von</h3>
+            <p class="group-creator">{{currentChannel.info.created}}</p>
+        </div>
+    </div>
+
+    <div class="leave-group">
+        <button class="cursor" (click)="leaveChannel()" [disabled]="!memberSubscriber" [class.disabled-btn]="!memberSubscriber">Channel verlassen</button>
+    </div>
+
+    
+
+    <!-- <div class="group-member-wrapper">
+
+        <div class="header-container">
+            <h2>Mitglieder</h2> 
+        </div>
+
+        <div (click)="openGroupMemberInfo()" *ngFor="let member of currentChannel.info.members; let i = index" class="group-members cursor" id="members">
+            <img src="{{member.imgNr}}" alt=""> <p>{{ member.name }} <span *ngIf="member.name == userDataService.currentUser['name']">(Du)</span></p>
+        </div>
+    </div>
+
+</div> -->
