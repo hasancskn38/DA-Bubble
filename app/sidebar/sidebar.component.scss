@@ -1,6 +1,7 @@
 //----------------- Card CONTAINER ------------- //
 .overview-card {
     max-width: 300px;
+    min-width: 300px;
     box-sizing: border-box;
     height: calc(100dvh - 130px);
     margin-left: 20px;
@@ -128,7 +129,6 @@ mat-card-header {
 .single-entry {
     font-size: 18px;
     font-weight: 700;
-    max-width: 200px;
     padding: 4px 20px;
     box-sizing: border-box;
     display: flex;
@@ -180,10 +180,10 @@ mat-card-header {
     background-color: white;
     box-sizing: border-box;
     /* padding: 24px 14px; */
-    padding: 15px;
+    padding: 5px;
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
-    left: -147px;
+    left: -157px;
     bottom: 200px;
     box-shadow: -4px 4px 7px rgba(0, 0, 0, 0.2);
     color: black;
@@ -201,7 +201,7 @@ mat-card-header {
         &:hover {
             cursor: pointer;
             color: #535AF1;
-            scale: 1.05;
+            scale: 1.01;
         }
     }
 }

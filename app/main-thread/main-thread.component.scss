@@ -111,7 +111,7 @@ $purple: #535af1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 60px !important;
     background-color: #fff !important;
     box-shadow: 0 6px 6px -2px #00000014;
     border-radius: 30px 30px 0 0;
@@ -180,8 +180,8 @@ $purple: #535af1;
     .other-message {
       display: flex;
       align-items: center;
-      padding: 10px 20px;
-      margin: 20px 0;
+      padding: 10px;
+      margin: 25px 0;
       position: relative;
 
       img {
@@ -246,7 +246,7 @@ $purple: #535af1;
     .clicked-message {
       display: flex;
       align-items: center;
-      padding: 10px 20px;
+      padding: 10px;
       margin: 20px 0;
       position: relative;
 
@@ -308,6 +308,8 @@ $purple: #535af1;
 
     .info-row-thread {
       display: flex;
+      align-items: center;
+      margin:0 0 0 10px;
 
       span {
         color: lightgray;
@@ -322,6 +324,16 @@ $purple: #535af1;
 
     .clicked-message-content {
       font-size: 18px;
+
+      p {
+        font-size: 14px;
+        color: #98a3f4;
+        margin: 0 0 0 10px;
+      }
+
+      .emoji-wrapper {
+        margin:0 10px;
+      }
 
       .toggle-emoji {
         display: none;
@@ -342,16 +354,17 @@ $purple: #535af1;
       .message-text {
         background-color: $main-purple;
         color: black;
-        padding: 10px;
+        padding: 15px;
         margin: 10px;
         border-radius: 15px 0px 15px 15px !important;
-        font-size: 18px;
+        font-size: 16px;
       }
 
       .message-text-own {
         background-color: $purple;
         color: #fff;
-        padding: 10px;
+        padding: 15px;
+        font-size: 16px;
         margin: 10px;
         border-radius: 15px 0px 15px 15px !important;
       }
@@ -382,14 +395,14 @@ $purple: #535af1;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    // height: 100px;
-    padding: 20px;
+    padding: 15px;
+    margin: 20px;
     position: absolute;
     bottom: 0px;
     left: 0px;
-    right: 8px;
+    right: 0px;
     border: 1px solid $main-purple;
-    border-radius: 10px;
+    border-radius: 25px;
     background: #fff;
 
     &:hover {
@@ -485,6 +498,10 @@ $purple: #535af1;
       flex: 1;
       margin: 0;
     }
+  }
+
+  .message-text {
+    font-size: 14px !important;
   }
 
   .thread-container {

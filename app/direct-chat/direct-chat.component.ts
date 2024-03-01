@@ -248,7 +248,7 @@ export class DirectChatComponent implements OnInit {
 
     if (index >= 0) {
 
-      if (date1 == this.sharedService.channelMessagesFromDB[index].time) {
+      if (date1 == this.sharedService.directMsgsFromDB[index].time) {
         return true;
       } else {
         return false;

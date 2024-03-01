@@ -57,7 +57,7 @@
             <div class="message-info-container">
 
                 <div class="info-row" [ngClass]="{'justify-end': message.from === userDataService.currentUser['name']}">
-                    <div class="info-row-name">
+                    <div class="info-row-name"  [ngClass]="{'row-reverse': message.from === userDataService.currentUser['name']}">
                         <h4>{{message.from}}</h4> <span class="message-time">{{message.calculatedTime}}</span>
                 </div>
                       

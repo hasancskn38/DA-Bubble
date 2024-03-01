@@ -5,6 +5,10 @@ $purple: #535af1;
   z-index: 2;
 }
 
+.gap-10 {
+  gap:10px;
+}
+
 .emoji-mart {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   background: #fff;
@@ -134,7 +138,7 @@ body::-webkit-scrollbar-thumb {
   transition: all 250ms ease-in-out;
 
   &:hover {
-    scale: 1.1;
+    scale: 1.01;
     color: #535AF1;
     background-color: #ECEEFE;
   }
@@ -260,7 +264,7 @@ $main-purple: #eceefe;
     background-color: white;
     border-radius: 30px 30px 0 0 !important;
     box-shadow: 0 6px 6px -2px #00000014 !important;
-    height: 100px;
+    height: 60px !important;
 
 
     .chat-header-search {
@@ -306,7 +310,6 @@ $main-purple: #eceefe;
         padding: 5px;
         border-radius: 15px;
 
-
         &:hover {
           background-color: $main-purple;
           padding: 5px;
@@ -331,6 +334,8 @@ $main-purple: #eceefe;
         background-size: cover;
         border-radius: 50%;
         object-fit: cover;
+        margin-right: -10px;
+        border:2px solid #fff;
       }
     }
 
@@ -422,8 +427,8 @@ $main-purple: #eceefe;
   .message-container {
     display: flex;
     align-items: center;
-    padding: 10px 30px 15px 30px;
-    margin: 40px 0;
+    padding: 10px;
+    margin: 25px 0;
     position: relative !important;
     font-size: 18px;
 
@@ -493,9 +498,10 @@ $main-purple: #eceefe;
         .info-row-name {
           display: flex;
           align-items: center;
+          gap:10px;
 
           h4 {
-            font-size: 20px;
+            font-size: 16px;
             margin: 0;
           }
 
@@ -546,8 +552,10 @@ $main-purple: #eceefe;
 
         .message-text {
           background-color: $main-purple;
-          padding: 10px;
+          padding: 15px;
           border-radius: 0px 15px 15px 15px;
+          max-width: 720px;
+          font-size: 16px;
         }
       }
 
@@ -556,6 +564,7 @@ $main-purple: #eceefe;
         color: #fff;
         padding: 10px;
         border-radius: 15px 0px 15px 15px !important;
+        max-width: 720px;
       }
 
 
@@ -565,7 +574,7 @@ $main-purple: #eceefe;
         gap: 10px;
 
         p {
-          font-size: 16px;
+          font-size: 14px;
           color: #98a3f4;
           margin: 0;
         }
@@ -574,8 +583,7 @@ $main-purple: #eceefe;
 
       .message-time {
         opacity: .8;
-        font-size: 14px;
-        margin: 0 0 0 15px;
+        font-size: 12px;
       }
     }
   }
@@ -606,13 +614,14 @@ $main-purple: #eceefe;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 20px;
+  padding: 15px;
+  margin: 20px;
   position: absolute;
   bottom: 0px;
+  right:0;
   left: 0px;
-  right: 8px;
   border: 1px solid $main-purple;
-  border-radius: 10px;
+  border-radius: 25px;
   background: #fff;
   transition: 225ms ease-in-out;
 
@@ -644,10 +653,13 @@ $main-purple: #eceefe;
     resize: none;
     border: none;
     outline: none;
+    font-size: 18px;
 
 
     &::placeholder {
-      opacity: .6;
+      opacity: .8;
+      font-size: 18px;
+      font-weight: 500;
     }
 
   }
@@ -655,9 +667,9 @@ $main-purple: #eceefe;
   .input-send {
     display: flex;
     justify-content: space-between;
-    position: relative;
-    left: 20px;
-    right: 20px;
+    position: absolute;
+    left: 10px;
+    right: 10px;
     bottom: 10px;
 
     .input-popups {
@@ -744,7 +756,6 @@ $main-purple: #eceefe;
     }
 
     .input-send-left {
-
 
       .add-data {
         margin-left: 0;
@@ -843,7 +854,6 @@ $main-purple: #eceefe;
   max-width: 100%;
   gap: 5px;
   border-radius: 30px;
-  padding: 5px 0;
 
   .toggle-emoji {
     display: none;
@@ -928,11 +938,6 @@ $main-purple: #eceefe;
 }
 
 @media (max-width:1200px) {
-
-  mat-toolbar {
-    height: unset !important;
-    padding: 15px !important;
-  }
 
   .chat-beginning-container {
     padding: 15px !important;
@@ -1024,7 +1029,11 @@ $main-purple: #eceefe;
 
 
   .message-container {
-    padding: 5px 15px !important;
+
+    .message-text {
+      font-size: 14px !important;
+    }
+
   }
 
   .emoji-mart {

@@ -19,7 +19,7 @@
         <!-- Message Content Container -->
         <div class="message-content-container">
           <!-- Info Row for Own Message -->
-          <div class="info-row-thread">
+          <div class="info-row-thread" [ngClass]="{'row-reverse': threadMessage.from === userDataService.currentUser['name']}">
             <p *ngIf="sharedService.threadContentReady" class="bold">
               {{ sharedService.currentThreadContent[0].from }}
             </p>
@@ -35,14 +35,15 @@
               <i class="material-icons">image</i>
               <a [href]="sharedService.currentThreadContent[0].imageUrl"  target="_blank">Open Uploaded Image</a>
               </div>
+               <p>{{ sharedService.currentThreadContent.length - 1 }} Antwort(en)</p>
           </div>
         </div>
       </div>
+
     </div>
 
     <!-- Chat Divider Bottom Container -->
     <div class="chat-divider-bottom-container">
-      <p>{{ sharedService.currentThreadContent.length - 1 }} Antworten</p>
       <div class="chat-divider-bottom"></div>
     </div>
 
@@ -93,8 +94,8 @@
           <!-- Message Response Container -->
           <div class="message-content-container">
             <div class="info-row-thread" [ngClass]="{
-                'justify-end':
-                  message.from === userDataService.currentUser['name']
+                'row-reverse': message.from === userDataService.currentUser['name'],
+                'gap-10': message.from === userDataService.currentUser['name'],
               }">
               <p class="bold">{{ message.from }}</p>
 
